@@ -9,7 +9,7 @@ app.use(express.static('dist'));
 app.use(express.json());
 morgan.token('body', (req) => JSON.stringify(req.body));
 morgan.token('ip', (req) => req.ip);
-app.use(morgan(':method :status :response-time :body :ip :remote-addr'));
+app.use(morgan(':method :status :response-time :body :ip'));
 
 let notes = [
 	{
