@@ -3,12 +3,13 @@ const morgan = require('morgan');
 const cors = require('cors');
 const app = express();
 
+app.set('trust proxy', true)
 app.use(cors());
 app.use(express.static('dist'));
 app.use(express.json());
 morgan.token('body', (req) => JSON.stringify(req.body));
-morgan.token('ip', (req) => String(req.ip));
-app.use(morgan(':method :status :response-time :body :ip'));
+morgan.token('ip', (req) => req.ip);
+app.use(morgan(':method :status :response-time :body :ip :remote-addr'));
 
 let notes = [
 	{
