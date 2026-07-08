@@ -7,7 +7,8 @@ app.use(cors());
 app.use(express.static('dist'));
 app.use(express.json());
 morgan.token('body', (req) => JSON.stringify(req.body));
-app.use(morgan(':method :status :response-time :body'));
+morgan.token('ip', (req) => String(req.ip));
+app.use(morgan(':method :status :response-time :body :ip'));
 
 let notes = [
 	{
