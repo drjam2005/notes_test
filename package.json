@@ -1,0 +1,19 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "backend",
+  "license": "MIT",
+  "author": "drjam2005",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Hello, World!\" && exit 1",
+    "server:dev": "node --watch index.js",
+    "build:ui": "rm -rf dist/ && cd ../frontend && npm run build && cp -r dist ../backend"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "morgan": "^1.11.0"
+  }
+}
