@@ -9,6 +9,7 @@
   "scripts": {
     "test": "echo \"Hello, World!\" && exit 1",
     "server:dev": "node --watch index.js",
+    "start": "node index.js",
     "build:ui": "rm -rf dist/ && cd ../frontend && npm run build && cp -r dist ../backend"
   },
   "dependencies": {
