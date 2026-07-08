@@ -6,7 +6,8 @@ const app = express();
 app.use(cors());
 app.use(express.static('dist'));
 app.use(express.json());
-app.use(morgan('tiny'));
+morgan.token('body', (req) => JSON.stringify(req.body));
+app.use(morgan(':method :status :response-time :body'));
 
 let notes = [
 	{
